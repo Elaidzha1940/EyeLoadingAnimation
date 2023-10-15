@@ -10,10 +10,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isAnimating = false
+    
     var body: some View {
         
-        VStack {
-           
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+            
+            HStack(spacing: 30) {
+                Capsule()
+                    .foregroundColor(.white)
+                    .frame(width: 140, height: 50)
+                    .overlay(
+                        Circle()
+                            .frame(width: 20, height: 20)
+                    )
+                
+                Capsule()
+                    .foregroundColor(.white)
+                    .frame(width: 140, height: 50)
+                    .overlay(
+                        Circle()
+                            .frame(width: 20, height: 20)
+                    )
+            }
+            .onAppear {
+                isAnimating = true
+            }
         }
     }
 }
