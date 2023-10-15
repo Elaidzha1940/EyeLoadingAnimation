@@ -21,7 +21,8 @@ struct ContentView: View {
             HStack(spacing: 30) {
                 Capsule()
                     .foregroundColor(.white)
-                    .frame(width: 140, height: 50)
+                    .frame(width: 140, height: isAnimating ? 0 : 50)
+                    .animation(.easeInOut(duration: 1.2).repeatForever(), value: isAnimating)
                     .overlay(
                         Circle()
                             .frame(width: 20, height: 20)
@@ -29,7 +30,8 @@ struct ContentView: View {
                 
                 Capsule()
                     .foregroundColor(.white)
-                    .frame(width: 140, height: 50)
+                    .frame(width: 140, height: isAnimating ? 0 : 50)
+                    .animation(.easeInOut(duration: 1.2).repeatForever(), value: isAnimating)
                     .overlay(
                         Circle()
                             .frame(width: 20, height: 20)
